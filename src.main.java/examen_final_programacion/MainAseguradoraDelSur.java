@@ -15,10 +15,9 @@ public abstract class MainAseguradoraDelSur {
 		int menuSistema;
 		String menuPoliza;
 
-		List<PolizaCliente> listPoliza = new ArrayList<PolizaCliente>();
 		List<PolizaGeneral> listGeneral = new ArrayList<PolizaGeneral>();
 		List<PolizaVip> listVip = new ArrayList<PolizaVip>();
-		
+
 		do {
 			System.out.println("########################################");
 			System.out.println("ASEGURADORA DEL SUR, elija una opción: ");
@@ -43,34 +42,79 @@ public abstract class MainAseguradoraDelSur {
 				switch (menuPoliza) {
 
 				case "a":
-					for(int i = 0; i < listPoliza.size(); i++) {
-					PolizaCliente cliente = new PolizaCliente();
-					System.out.print("Ingrese su nombre: ");
-					String nombre = teclado.nextLine();
-					System.out.println();
-					System.out.print("Ingrese descripción: ");
-					String descripcion = teclado.nextLine();
-					System.out.println();
-					System.out.print("Ingrese Año Vigencia: ");
-					String anioVigencia = teclado.nextLine();
-					System.out.println();
-					System.out.print("Ingrese Código de Póliza: ");
-					String codigoPoliza = teclado.nextLine();
-					System.out.println();
-					System.out.print("Ingrese valor de Póliza: ");
-					int valorPoliza = tecladoInt.nextInt();
-					System.out.println();
-					
-					cliente.setNombre(nombre);
-					cliente.setDescripcion(descripcion);
-					
+					for (int i = 0; i <= 2; i++) {
+						PolizaGeneral cliente1 = new PolizaGeneral();
+
+						System.out.print("Ingrese su nombre: ");
+						String nombre = teclado.nextLine();
+						System.out.print("Ingrese descripción: ");
+						String descripcion = teclado.nextLine();
+						System.out.print("Ingrese Año Vigencia: ");
+						int anioVigencia = tecladoInt.nextInt();
+						System.out.print("Ingrese Código de Póliza: ");
+						String codigoPoliza = teclado.nextLine();
+						System.out.print("Ingrese valor de Póliza: ");
+						int valorPoliza = tecladoInt.nextInt();
+						System.out.print("Ingrese código de descuento: ");
+						String codigoDescuento = teclado.nextLine();
+						System.out.print("Ingrese número de seguro: ");
+						String numeroSeguro = teclado.nextLine();
+
+						cliente1.setNombre(nombre);
+						cliente1.setDescripcion(descripcion);
+						cliente1.setAnioVigencia(anioVigencia);
+						cliente1.setCodigoPoliza(codigoPoliza);
+						cliente1.setValorPoliza(valorPoliza);
+						cliente1.setCodigoDescuento(codigoDescuento);
+						cliente1.setNumeroDeSeguro(numeroSeguro);
+
+						listGeneral.add(cliente1);
+
+						System.out.println(cliente1);
 					}
 
+					break;
+
+				case "b":
+
+					for (int i = 0; i <= 2; i++) {
+						PolizaVip cliente2 = new PolizaVip();
+
+						System.out.print("Ingrese su nombre: ");
+						String nombre = teclado.nextLine();
+						System.out.print("Ingrese descripción: ");
+						String descripcion = teclado.nextLine();
+						System.out.print("Ingrese Año Vigencia: ");
+						int anioVigencia = tecladoInt.nextInt();
+						System.out.print("Ingrese Código de Póliza: ");
+						String codigoPoliza = teclado.nextLine();
+						System.out.print("Ingrese valor de Póliza: ");
+						int valorPoliza = tecladoInt.nextInt();
+						System.out.print("Ingrese beneficio: ");
+						String beneficio = teclado.nextLine();
+
+						cliente2.setNombre(nombre);
+						cliente2.setDescripcion(descripcion);
+						cliente2.setAnioVigencia(anioVigencia);
+						cliente2.setCodigoPoliza(codigoPoliza);
+						cliente2.setValorPoliza(valorPoliza);
+						cliente2.setBeneficio(beneficio);
+
+						listVip.add(cliente2);
+
+						System.out.println(cliente2);
+
+					}
+
+					break;
+
 				}
+			case 2:
+
+				break;
 			}
 
 		} while (menuSistema != 5);
 
 	}
-
 }

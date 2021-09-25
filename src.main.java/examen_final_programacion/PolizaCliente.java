@@ -48,4 +48,12 @@ public class PolizaCliente {
 	public void setValorPoliza(int valorPoliza) {
 		this.valorPoliza = valorPoliza;
 	}
+
+	@Override
+	public String toString() {
+		return "PolizaCliente [Nombre = " + nombre + ", Descripcion = " + descripcion + ", Año Vigencia=" + anioVigencia
+				+ ", Cóigo Poliza = " + codigoPoliza + ", Valor Poliza = " + valorPoliza + "]";
+	}
+	
+	
 }
