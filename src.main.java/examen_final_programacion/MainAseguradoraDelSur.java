@@ -1,5 +1,7 @@
 package examen_final_programacion;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public abstract class MainAseguradoraDelSur {
@@ -13,6 +15,10 @@ public abstract class MainAseguradoraDelSur {
 		int menuSistema;
 		String menuPoliza;
 
+		List<PolizaCliente> listPoliza = new ArrayList<PolizaCliente>();
+		List<PolizaGeneral> listGeneral = new ArrayList<PolizaGeneral>();
+		List<PolizaVip> listVip = new ArrayList<PolizaVip>();
+		
 		do {
 			System.out.println("########################################");
 			System.out.println("ASEGURADORA DEL SUR, elija una opción: ");
@@ -27,18 +33,39 @@ public abstract class MainAseguradoraDelSur {
 
 			switch (menuSistema) {
 			case 1:
-				System.out.println("Elija el tipo de Póliza que desea ingresar");
+				System.out.println("Tipo de Pólizas");
 				System.out.println("a) Póliza General");
 				System.out.println("b) Poliza Vip");
 				System.out.println("Seleccione una opción:");
 				menuPoliza = teclado.nextLine();
-				
-				switch(menuPoliza) {
-				
+				System.out.println();
+
+				switch (menuPoliza) {
+
 				case "a":
-					System.out.println("");
-				
-				
+					for(int i = 0; i < listPoliza.size(); i++) {
+					PolizaCliente cliente = new PolizaCliente();
+					System.out.print("Ingrese su nombre: ");
+					String nombre = teclado.nextLine();
+					System.out.println();
+					System.out.print("Ingrese descripción: ");
+					String descripcion = teclado.nextLine();
+					System.out.println();
+					System.out.print("Ingrese Año Vigencia: ");
+					String anioVigencia = teclado.nextLine();
+					System.out.println();
+					System.out.print("Ingrese Código de Póliza: ");
+					String codigoPoliza = teclado.nextLine();
+					System.out.println();
+					System.out.print("Ingrese valor de Póliza: ");
+					int valorPoliza = tecladoInt.nextInt();
+					System.out.println();
+					
+					cliente.setNombre(nombre);
+					cliente.setDescripcion(descripcion);
+					
+					}
+
 				}
 			}
 
