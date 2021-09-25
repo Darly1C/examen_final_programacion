@@ -14,6 +14,7 @@ public abstract class MainAseguradoraDelSur {
 
 		int menuSistema;
 		String menuPoliza;
+		String codigoPoliza = "";
 
 		List<PolizaGeneral> listGeneral = new ArrayList<PolizaGeneral>();
 		List<PolizaVip> listVip = new ArrayList<PolizaVip>();
@@ -52,7 +53,7 @@ public abstract class MainAseguradoraDelSur {
 						System.out.print("Ingrese Año Vigencia: ");
 						int anioVigencia = tecladoInt.nextInt();
 						System.out.print("Ingrese Código de Póliza: ");
-						String codigoPoliza = teclado.nextLine();
+						codigoPoliza = teclado.nextLine();
 						System.out.print("Ingrese valor de Póliza: ");
 						int valorPoliza = tecladoInt.nextInt();
 						System.out.print("Ingrese código de descuento: ");
@@ -87,7 +88,7 @@ public abstract class MainAseguradoraDelSur {
 						System.out.print("Ingrese Año Vigencia: ");
 						int anioVigencia = tecladoInt.nextInt();
 						System.out.print("Ingrese Código de Póliza: ");
-						String codigoPoliza = teclado.nextLine();
+						codigoPoliza = teclado.nextLine();
 						System.out.print("Ingrese valor de Póliza: ");
 						int valorPoliza = tecladoInt.nextInt();
 						System.out.print("Ingrese beneficio: ");
@@ -110,7 +111,12 @@ public abstract class MainAseguradoraDelSur {
 
 				}
 			case 2:
-
+				System.out.print("Ingrese código de Póliza: ");
+				String codigoPoliza2 = teclado.nextLine();
+				if(codigoPoliza2.equals(codigoPoliza)){
+				System.out.println(codigoPoliza2);
+				}
+				
 				break;
 			}
 
